@@ -1,0 +1,8 @@
+{
+    "author_full_name": "Jan Bronicki",
+    "project_full_name": "Hello World",
+    "project_slug": "{{ cookiecutter.project_full_name.lower().replace(' ', '-') }}",
+    "project_short_description": "Prints out Hello World!"
+}
+
+
