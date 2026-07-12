@@ -1,0 +1,13 @@
+# Reproducible build environment for this LaTeX document.
+# Extends the upstream TeX Live image (same one used in CI) and adds
+# Inkscape for SVG figure conversion. Built and run via Podman (preferred)
+# or Docker — see Makefile / compose.yaml.
+FROM ghcr.io/xu-cheng/texlive-debian:latest
+
+# Install inkscape (required for SVG figure processing via .latexmkrc)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends inkscape && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /document
+CMD ["/bin/bash"]

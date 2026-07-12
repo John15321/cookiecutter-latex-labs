@@ -1,0 +1,8 @@
+Place figures (PNG, PDF, JPEG, or SVG) here.
+
+SVG figures are converted to PDF automatically at build time via Inkscape
+(see the `svg` custom dependency in `.latexmkrc`), so you can
+`\includesvg{figures/my-diagram}` directly.
+
+This file exists only so the empty directory is tracked by Git; delete it
+once you add real figures.

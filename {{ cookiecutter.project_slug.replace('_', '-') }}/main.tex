@@ -1,0 +1,70 @@
+\documentclass[a4paper,11pt]{{ '{' }}{{ cookiecutter.document_class }}{{ '}' }}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{csquotes}
+
+% `book` does not define the `abstract` environment by default (unlike
+% `article`/`report`); provide a minimal fallback so this template compiles
+% under any of the three document classes.
+{% raw -%}
+\makeatletter
+\@ifundefined{abstract}{%
+  \newenvironment{abstract}{%
+    \begin{center}\bfseries\abstractname\end{center}
+    \begin{quotation}
+  }{%
+    \end{quotation}
+  }
+  \newcommand{\abstractname}{Abstract}
+}{}
+\makeatother
+{% endraw %}
+
+% Path(s) where \includegraphics / svg figures are looked up.
+{% raw -%}
+\graphicspath{{./figures/}}
+{% endraw -%}
+
+\title{{ '{' }}{{ cookiecutter.project_full_name }}{{ '}' }}
+\author{{ '{' }}{{ cookiecutter.author_full_name }}{{ '}' }}
+\date{{ '{' }}{{ cookiecutter.year }}{{ '}' }}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue,
+    pdfauthor={{ '{' }}{{ cookiecutter.author_full_name }}{{ '}' }},
+    pdftitle={{ '{' }}{{ cookiecutter.project_full_name }}{{ '}' }},
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+{{ cookiecutter.project_short_description }}
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+\input{sources/00_introduction}
+
+% Add further sections here, e.g.:
+% \input{sources/01_background}
+% \input{sources/02_methods}
+% \input{sources/03_results}
+% \input{sources/04_conclusion}
+
+\clearpage
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

@@ -1,8 +1,11 @@
 {
     "author_full_name": "Jan Bronicki",
-    "project_full_name": "Hello World",
+    "project_full_name": "My LaTeX Document",
     "project_slug": "{{ cookiecutter.project_full_name.lower().replace(' ', '-') }}",
-    "project_short_description": "Prints out Hello World!"
+    "project_short_description": "A generic, reproducible LaTeX document built with Podman.",
+    "document_class": ["article", "report", "book"],
+    "year": "2026",
+    "_copy_without_render": [
+        ".github/workflows/*.yaml"
+    ]
 }
-
-
